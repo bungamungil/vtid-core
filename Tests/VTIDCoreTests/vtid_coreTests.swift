@@ -1,11 +1,10 @@
 import XCTest
-@testable import vtid_core
+@testable import VTIDCore
 
 final class vtid_coreTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(vtid_core().text, "Hello, World!")
     }
 }

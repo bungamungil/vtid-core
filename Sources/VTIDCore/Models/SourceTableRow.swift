@@ -46,9 +46,6 @@ public final class SourceTableRowModel: SourceTableRow, Model {
     @Field(key: "vtuber_affiliation_logo")
     public var vtuberAffiliationLogo: String?
     
-    @Field(key: "created_at")
-    public var createdAt: Date
-    
     public init() { }
     
     public init(

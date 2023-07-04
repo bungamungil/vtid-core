@@ -12,24 +12,26 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "VTIDCore",
-            targets: ["vtid-core"]
+            targets: ["VTIDCore"]
         ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.8.0"),
+        .package(url: "https://github.com/naufalfachrian/fluent-timestamp", exact: "0.1.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "vtid-core",
+            name: "VTIDCore",
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
+                .product(name: "FluentTimestamp", package: "fluent-timestamp"),
             ]),
         .testTarget(
-            name: "vtid-coreTests",
-            dependencies: ["vtid-core"]),
+            name: "VTIDCoreTests",
+            dependencies: ["VTIDCore"]),
     ]
 )
