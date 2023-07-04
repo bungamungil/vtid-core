@@ -6,10 +6,11 @@
 //
 
 import Fluent
+import FluentTimestamp
 import Foundation
 
 
-public protocol SourceTableRow {
+public protocol SourceTableRow: HasTimestamp {
     
     var channelID: String { get }
     
@@ -46,6 +47,12 @@ public final class SourceTableRowModel: SourceTableRow, Model {
     @Field(key: "vtuber_affiliation_logo")
     public var vtuberAffiliationLogo: String?
     
+    @Field(timestamp: .createdAt)
+    public var createdAt: Date?
+    
+    @Field(timestamp: .updatedAt)
+    public var updatedAt: Date?
+    
     public init() { }
     
     public init(
@@ -62,6 +69,7 @@ public final class SourceTableRowModel: SourceTableRow, Model {
         self.vtuberBirthday = vtuberBirthday
         self.vtuberAffiliation = vtuberAffiliation
         self.vtuberAffiliationLogo = vtuberAffiliationLogo
+        self.createdAt = Date()
     }
 
 }
