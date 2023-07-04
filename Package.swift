@@ -19,7 +19,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.8.0"),
-        .package(url: "https://github.com/naufalfachrian/fluent-timestamp", exact: "0.1.0")
+        .package(url: "https://github.com/naufalfachrian/fluent-timestamp", exact: "0.1.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -29,9 +29,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentTimestamp", package: "fluent-timestamp"),
-            ]),
-        .testTarget(
-            name: "VTIDCoreTests",
-            dependencies: ["VTIDCore"]),
+            ]
+        ),
     ]
 )
