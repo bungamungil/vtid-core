@@ -1,3 +1,3 @@
 # vtid-core
 
-A description of this package.
+VtuberID Core Library
