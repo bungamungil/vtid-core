@@ -5,7 +5,7 @@
 //  Created by Bunga Mungil on 04/07/23.
 //
 
-import Fluent
+import FluentKit
 
 
 public struct CreateSourceTableRowTables: AsyncMigration {

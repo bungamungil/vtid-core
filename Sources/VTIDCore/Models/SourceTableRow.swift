@@ -5,12 +5,11 @@
 //  Created by Bunga Mungil on 04/07/23.
 //
 
-import Fluent
-import FluentTimestamp
+import FluentKit
 import Foundation
 
 
-public protocol SourceTableRow: HasTimestamp {
+public protocol SourceTableRow {
     
     var channelID: String { get }
     
@@ -21,6 +20,10 @@ public protocol SourceTableRow: HasTimestamp {
     var vtuberAffiliation: String? { get }
     
     var vtuberAffiliationLogo: String? { get }
+    
+    var createdAt: Date? { get }
+    
+    var updatedAt: Date? { get }
     
 }
 
@@ -47,10 +50,10 @@ public final class SourceTableRowModel: SourceTableRow, Model {
     @Field(key: "vtuber_affiliation_logo")
     public var vtuberAffiliationLogo: String?
     
-    @Field(timestamp: .createdAt)
+    @Field(key: "created_at")
     public var createdAt: Date?
     
-    @Field(timestamp: .updatedAt)
+    @Field(key: "updated_at")
     public var updatedAt: Date?
     
     public init() { }
