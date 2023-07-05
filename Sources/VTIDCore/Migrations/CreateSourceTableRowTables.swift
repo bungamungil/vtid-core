@@ -27,4 +27,6 @@ public struct CreateSourceTableRowTables: AsyncMigration {
         try await database.schema(SourceTableRowModel.schema).delete()
     }
     
+    public init() { }
+    
 }
