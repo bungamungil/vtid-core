@@ -22,5 +22,5 @@ public let DatabaseID: DatabaseID = .mysql
 
 
 fileprivate func env(_ key: String) -> String? {
-    return ProcessInfo.processInfo.environment[key]
+    return Environment.get(key)
 }
