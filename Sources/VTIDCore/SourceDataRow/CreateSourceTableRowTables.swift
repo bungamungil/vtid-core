@@ -21,6 +21,7 @@ public struct CreateSourceTableRowTables: AsyncMigration {
             .field("vtuber_affiliation_logo", .string)
             .field("created_at", .datetime)
             .field("updated_at", .datetime)
+            .unique(on: "channel_id")
             .create()
     }
     
