@@ -13,6 +13,8 @@ public protocol SourceTableRow {
     
     var channelID: String { get }
     
+    var vtuberName: String? { get }
+    
     var vtuberPersona: String? { get }
     
     var vtuberBirthday: Date? { get }
@@ -37,6 +39,9 @@ public final class SourceTableRowModel: SourceTableRow, Model {
     
     @Field(key: "channel_id")
     public var channelID: String
+    
+    @Field(key: "vtuber_name")
+    public var vtuberName: String?
     
     @Field(key: "vtuber_persona")
     public var vtuberPersona: String?

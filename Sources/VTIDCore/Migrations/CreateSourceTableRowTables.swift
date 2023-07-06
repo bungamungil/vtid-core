@@ -14,6 +14,7 @@ public struct CreateSourceTableRowTables: AsyncMigration {
         try await database.schema(SourceTableRowModel.schema)
             .id()
             .field("channel_id", .string, .required)
+            .field("vtuber_name", .string)
             .field("vtuber_persona", .string)
             .field("vtuber_birthday", .datetime)
             .field("vtuber_affiliation", .string)
